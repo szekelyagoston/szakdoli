@@ -9,7 +9,7 @@
 	</parent>
 
   <artifactId>szakdolgozat-core</artifactId>
-  <packaging>jar</packaging>
+  <packaging>ejb</packaging>
 
   <name>szakdolgozat-core</name>
   <url>http://maven.apache.org</url>
@@ -19,11 +19,21 @@
   </properties>
 
   <dependencies>
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+	
+	<dependency>
+	    <groupId>javax.persistence</groupId>
+	    <artifactId>persistence-api</artifactId>
+	    <version>1.0.2</version>
+	</dependency>
+	    
   </dependencies>
 </project>

@@ -1,0 +1,15 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence persistence_1_0.xsd" version="1.0">
+    <persistence-unit name="my-app" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <jta-data-source>java:jboss/datasources/SzakdolgozatCoreDs</jta-data-source>
+        <mapping-file>\META-INF\orm.xml</mapping-file>   
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+            <!-- TODO: Put in a property file -->
+            <property name="javax.persistence.jdbc.user" value="AGOSTON"/>
+            <property name="javax.persistence.jdbc.password" value="AGOSTON"/>
+        </properties>
+    </persistence-unit>
+</persistence>
