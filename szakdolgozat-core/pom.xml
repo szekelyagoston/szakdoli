@@ -8,10 +8,10 @@
 	  <version>1.0-SNAPSHOT</version>
 	</parent>
 
-  <artifactId>szakdolgozat-model</artifactId>
+  <artifactId>szakdolgozat-core</artifactId>
   <packaging>jar</packaging>
 
-  <name>szakdolgozat-model</name>
+  <name>szakdolgozat-core</name>
   <url>http://maven.apache.org</url>
 
   <properties>
