@@ -13,8 +13,8 @@
 
     <http use-expressions="false" entry-point-ref="http403EntryPoint">
         <intercept-url pattern="/" access="ROLE_ANONYMOUS" />
-        <intercept-url pattern="/css/**" access="ROLE_ANONYMOUS"/>
-        <intercept-url pattern="/js/**" access="ROLE_ANONYMOUS"/>
+        <intercept-url pattern="/lib/**" access="ROLE_ANONYMOUS"/>
+        <intercept-url pattern="/app/**" access="ROLE_ANONYMOUS"/>
         <intercept-url pattern="/**" access="ROLE_USER" />
         
     </http>

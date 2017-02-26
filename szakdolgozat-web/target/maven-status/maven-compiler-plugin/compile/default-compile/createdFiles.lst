@@ -1,2 +1,3 @@
 com\szekelyagoston\szakdolgozat\App.class
 com\szekelyagoston\szakdolgozat\controllers\IndexController.class
+com\szekelyagoston\szakdolgozat\services\MyUserDetailsService.class

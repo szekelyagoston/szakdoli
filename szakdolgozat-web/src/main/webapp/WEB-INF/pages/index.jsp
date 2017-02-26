@@ -1,19 +1,36 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head><title>First JSP</title></head>
-<body>
-  <%
-    double num = Math.random();
-    if (num > 0.95) {
-  %>
-      <h2>You'll have a luck day!</h2><p>(<%= num %>)</p>
-  <%
-    } else {
-  %>
-      <h2>Well, life goes on ... </h2><p>(<%= num %>)</p>
-  <%
-    }
-  %>
-  <a href="<%= request.getRequestURI() %>"><h3>Try Again</h3></a>
+<head>
+<title>Szakdolgozat</title>
+
+<link rel="stylesheet" href="lib/css/bootstrap.css">
+
+<script src="lib/js/jquery-3.1.1.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+
+<script src="lib/js/angular.js"></script>
+<script src="lib/js/ui-router-0-4-2.js"></script>
+
+<script src="app/App.js"></script>
+<script src="app/NavigationController.js"></script>
+
+<!-- LOGIN -->
+<script src="app/login/LoginController.js"></script>
+<script src="app/login/LoginService.js"></script>
+
+<!-- LOGIN -->
+<script src="app/about/AboutController.js"></script>
+<script src="app/about/AboutService.js"></script>
+
+<%-- <link href="${pageContext.request.contextPath}/lib/css/bootstrap.css" rel="stylesheet"> --%>
+
+</head>
+<body ng-app="app">
+
+	
+	<div ui-view></div>
+
+
+	
 </body>
 </html>
