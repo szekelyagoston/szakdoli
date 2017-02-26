@@ -15,20 +15,29 @@
         <intercept-url pattern="/" access="ROLE_ANONYMOUS" />
         <intercept-url pattern="/lib/**" access="ROLE_ANONYMOUS"/>
         <intercept-url pattern="/app/**" access="ROLE_ANONYMOUS"/>
+        <intercept-url pattern="/api/**" access="ROLE_USER" />
         <intercept-url pattern="/**" access="ROLE_USER" />
         
     </http>
 
     <authentication-manager>
-		<authentication-provider user-service-ref="myUserDetailsService" ></authentication-provider>
+    	<authentication-provider
+          ref="myAuthenticationProvider">
+<!--             <beans:property name="userDetailsService" ref="myUserDetailsService" /> -->
+            </authentication-provider>
 	</authentication-manager>
+	
+	<beans:bean id="myAuthenticationProvider"
+                class="com.szekelyagoston.szakdolgozat.services.MyAuthenticationProvider">
+<!-- 		<property name="userDao" ref="userDao" /> -->
+	</beans:bean>
 	
 	<beans:bean id="myUserDetailsService"
                 class="com.szekelyagoston.szakdolgozat.services.MyUserDetailsService">
 <!-- 		<property name="userDao" ref="userDao" /> -->
 	</beans:bean>
 
-	<beans:bean id="http403EntryPoint" class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint">
+	<beans:bean id="http403EntryPoint" class="com.szekelyagoston.szakdolgozat.authentication.RestAuthenticationEntryPoint">
     </beans:bean>
 
 </beans:beans>
