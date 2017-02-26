@@ -12,6 +12,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springframework.version>4.3.6.RELEASE</springframework.version>
+    <spring.security.version>4.2.1.RELEASE</spring.security.version>
+    <jackson.version>2.7.5</jackson.version>
   </properties>
 	<modules>
 	  <module>szakdolgozat-core</module>
@@ -51,9 +54,45 @@
 						<ejbVersion>3.0</ejbVersion>
 					</configuration>
 				</plugin>
+				<plugin>
+			      <artifactId>maven-compiler-plugin</artifactId>
+			        <configuration>
+			          <source>1.8</source>
+			          <target>1.8</target>
+			        </configuration>
+			    </plugin>
 		</plugins>
 		
 		
 	</build>
+	
+	<pluginManagement>
+    <plugins>
+        <plugin>
+            <groupId>org.eclipse.m2e</groupId>
+            <artifactId>lifecycle-mapping</artifactId>
+            <version>1.0.0</version>
+            <configuration>
+                 <lifecycleMappingMetadata>
+                       <pluginExecutions>
+                             <pluginExecution>
+                                 <pluginExecutionFilter>
+                                       <groupId>org.apache.maven.plugins</groupId>
+                                       <artifactId>maven-compiler-plugin</artifactId>
+                                       <versionRange>[1.0.0,)</versionRange>
+                                     <goals>
+                                         <goal>compile</goal>
+                                     </goals>
+                                 </pluginExecutionFilter>
+                                 <action>
+                                      <ignore />
+                                 </action>
+                             </pluginExecution>
+                       </pluginExecutions>
+                 </lifecycleMappingMetadata>
+           </configuration>
+       </plugin>
+    </plugins>
+</pluginManagement>
 
 </project>
